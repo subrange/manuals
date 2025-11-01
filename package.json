@@ -1,34 +1,21 @@
 {
-  "name": "lang-spec",
+  "name": "ripe-manuals",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "generateIndex.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./node_modules/nodemon/bin/nodemon.js -e js,html --inspect ./server.js"
+    "build:index": "node generateIndex.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RamonAsuncion/lang-spec.git"
+    "url": "git+https://github.com/ripe-lang/docs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RamonAsuncion/lang-spec/issues"
+    "url": "https://github.com/ripe-lang/docs/issues"
   },
-  "homepage": "https://github.com/RamonAsuncion/lang-spec#readme",
-  "dependencies": {
-    "express": "^5.1.0",
-    "highlight.js": "^11.11.1",
-    "marked": "^16.3.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.10",
-    "nodemon": "^3.1.10",
-    "postcss": "^8.5.6",
-    "prettier": "3.6.2",
-    "tailwindcss": "^4.1.14"
-  },
-  "keywords": [],
-  "description": ""
+  "homepage": "https://github.com/ripe-lang/docs#readme"
 }
