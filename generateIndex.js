@@ -5,6 +5,7 @@ const contentDir = path.resolve("content");
 const outputFile = path.join(contentDir, "index.json");
 
 async function generateIndex() {
+  const PREFIX = "manuals/"
   const files = [];
   const entries = await fs.readdir(contentDir, { withFileTypes: true });
   for (const entry of entries) {
@@ -13,7 +14,7 @@ async function generateIndex() {
     const text = await fs.readFile(fullPath, "utf8");
     const match = text.match(/^#\s+(.*)/m);
     const title = match ? match[1].trim() : entry.name.replace(/\.md$/i, "");
-    files.push({ title, path: `/manuals/content/${entry.name}` });
+    files.push({ title, path: `${PREFIX}content/${entry.name}` });
   }
   await fs.writeFile(outputFile, JSON.stringify(files, null, 2));
   console.log(`Generated ${files.length} entries → ${outputFile}`);
